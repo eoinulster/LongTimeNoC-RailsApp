@@ -1,0 +1,70 @@
+<div class="container" >
+<div class="row">
+<div class="four columns">
+<br>
+</div>
+<div class="four columns" style="background-color: darkgray; border-style: solid">
+
+<%= form_for @event do |f| %>
+    <%= f.label :date %>
+    <%= f.date_field :date, :class => 'u-full-width' %><br />
+
+    <%= f.label :time %>
+    <%= f.time_field :time, value: event.time, :class => 'u-full-width' %><br />
+
+    <%= f.label :duration, 'Duration in minutes' %>
+    <%= f.number_field :duration, :step => "15", :class => 'u-full-width' %><br />
+
+    <%= f.label :location %>
+    <%= f.text_field :location, :class => 'u-full-width' %><br />
+
+    <p>
+    <b>Indoors or Outdoors</b>
+    <br />
+    <%= f.radio_button :indoors, '1' %> Indoors<br />
+    <%= f.radio_button :indoors, '0' %> Outdoors<br />
+    </p>
+
+    <p>
+        <b>Saved Contacts</b>
+
+        <%= f.collection_check_boxes :closecontact_ids, @all_contacts, :id, :fullname do  |b|%>
+        <%= b.label(:"data-value" => b.value) { b.check_box + b.text } %>
+        <% end %>
+    </p>
+
+<p>
+    <b>Add a new contact:</b>
+    <br>
+
+    <%= f.fields_for :closecontacts, @event.closecontacts.build do |cc_fields| %>
+
+    First name: <%= cc_fields.text_field :firstname %>
+    <br>
+    Second name: <%= cc_fields.text_field :secondname %>
+
+    <% end %>
+</p>
+
+
+
+
+
+
+
+
+
+
+<%= f.submit :class => 'u-full-width' %>
+<a class='button u-full-width' href=<%= user_events_url(current_user) %> >Cancel</a>
+
+<% end %>
+</div>
+
+
+
+
+<%= render "rack" %>
+
+</div>
+</div>

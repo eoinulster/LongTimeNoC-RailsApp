@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Long Time No C</title>
+    <meta name="description" content="">
+    <meta name="Eoin" content="">
+
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= csrf_meta_tags %>
+
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+<div class="container" >
+
+    <div class="row" style="background-color: darkgray; text-align: center;">
+        <h1>Long Time No C</h1>
+
+        <p>Contact Tracing Made Easy</p>
+    </div>
+    <br>
+    <% if logged_in? %>
+
+    <div class="row">
+
+        <div class="two columns"><br></div>
+        <div class="eight columns" style="background-color: yellow; border-style: solid">
+            <div class="u-cf"></div>
+            <h3 class="u-pull-left">Contact records</h3>
+            <!-- <h5 class="u-pull-right"><%= current_user.email %></h5> -->
+            <form action=<%= session_url %> method='post'>
+              <input
+                type="hidden"
+                name="_method"
+                value="delete">
+              <input
+                type="hidden"
+                name="authenticity_token"
+                value="<%= form_authenticity_token %>">
+              <input class="u-pull-right"
+                type="submit" value="Sign Out">
+            </form>
+        </div>
+        <div class="two columns"><br></div>
+
+
+    </div>
+    <% end %>
+
+</div>
+
+
+<div>
+      <% if flash[:notice] %>
+        <p><%= flash[:notice] %></p>
+      <% end %>
+
+      <% if flash[:errors] %>
+        <p><%= flash[:errors].join(", ") %></p>
+      <% end %>
+
+      <%= yield %>
+</div>
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+</div>
+
+  </body>
+</html>

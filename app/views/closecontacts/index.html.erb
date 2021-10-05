@@ -1,0 +1,49 @@
+<div class= "container"
+
+<div class="row">
+    <div class="two columns">
+        <br>
+    </div>
+
+<div class="eight columns" style="background-color: lightgray; border-style: solid">
+<br>
+
+
+<h1>Saved Contacts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Secondname</th>
+      <th>Telephone</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @closecontacts.each do |closecontact| %>
+      <tr>
+        <td><%= closecontact.firstname %></td>
+        <td><%= closecontact.secondname %></td>
+        <td><%= closecontact.telephone %></td>
+        <td><%= closecontact.email %></td>
+        <td><%= link_to 'Details', user_closecontact_url(current_user, closecontact) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Closecontact', new_closecontact_path %>
+<%= link_to 'Homepage', user_events_url(current_user) %>
+
+
+</div>
+
+    <div class="two columns">
+        <br>
+    </div>
+</div>

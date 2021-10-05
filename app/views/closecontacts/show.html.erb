@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @closecontact.firstname %>
+</p>
+
+<p>
+  <strong>Secondname:</strong>
+  <%= @closecontact.secondname %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @closecontact.telephone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @closecontact.email %>
+</p>
+
+<p>
+  <strong>Regular:</strong>
+  <%= @closecontact.regular %>
+</p>
+
+<%= link_to 'Edit', edit_closecontact_path(@closecontact) %> |
+<%= link_to 'Back', user_closecontacts_url(current_user) %>

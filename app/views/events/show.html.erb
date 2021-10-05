@@ -1,0 +1,54 @@
+<div class="container" style="text-align: center">
+    <div class="row">
+        <div class="four columns">
+            <br>
+        </div>
+        <div class="four columns" style="background-color: lightgray;">
+            <div style="background-color: yellow; text-align: center;">
+                <br>
+                <a class='button u-full-width' href="<%= user_events_url(current_user) %>">Home - All entries</a>
+                <br>
+                <form action="<%= event_url(@event) %>" method="POST" style="margin-bottom: 0rem">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
+                    <input type="submit" class="u-full-width" value="Delete Entry" style="margin-bottom: 1rem">
+                </form>
+                <a class='button u-full-width' href="<%= edit_event_url(@event) %>">Edit Entry</a>
+                <br>
+
+            </div>
+            <h4>Close-contact Record</h4>
+            <table class="u-full-width">
+                <tr>
+                    <th>Date:</th>
+                    <td><%= @event.date.strftime("%d of %B") %></td>
+                </tr>
+                <tr>
+                    <th>Time:</th>
+                    <td><%= @event.date.strftime("%H:%M") %></td>
+                </tr>
+                <tr>
+                    <th>Location:</th>
+                    <td><%= @event.location %></td>
+                </tr>
+                <tr>
+                    <th>Duration:</th>
+                    <td><%= @event.duration %> minutes</td>
+                </tr>
+                <% event_indoors = @event.indoors ? "indoors" : "outdoors" %>
+                <tr>
+                    <th>Contact indoors or outdoors:</th>
+                    <td><%= event_indoors %></td>
+                </tr>
+
+            </table>
+            <ul>
+                <% @event.closecontacts.each do |cc| %>
+                    <li><%= cc.fullname %></li>
+                <% end %>
+            </ul>
+            <br>
+        </div>
+
+<%= render "rack" %>
+</div>

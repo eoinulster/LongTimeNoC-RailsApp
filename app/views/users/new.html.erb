@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row">
+        <div class="two columns">
+            <br>
+        </div>
+        <div class="eight columns" style="margin-bottom: 0; background-color: darkgray;" >
+            <div >
+                <form class='form' action="<%= users_url %>" method="post" style="margin-bottom: 0">
+                  <input
+                    type="hidden"
+                    name="authenticity_token"
+                    value="<%= form_authenticity_token %>">
+
+
+                    <label for="new-user-email"></label>
+                    <input id='new-user-email' type="text" name="user[email]" class="u-full-width" style="background-color:yellow; text-align: center; margin-bottom: 0;"
+                        placeholder="Enter Username">
+
+                    <label for="new-user-password"></label>
+                    <input id='new-user-password' type="password" name="user[password]" class="u-full-width" style="background-color:yellow; text-align: center;
+                                margin-bottom:0;" placeholder="Enter Password">
+
+                    <input class="u-full-width" type="submit" value="Create account">
+
+
+                </form>
+            </div>
+
+        </div>
+        <div class="two columns">
+            <br>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="four columns">
+            <br>
+        </div>
+        <div class="four columns">
+            <div style="background-color:rgba(169, 169, 169, 0.671); text-align: center">
+                <br>
+                <a class='button' href=<%= new_session_url %> >Existing user login</a>
+
+
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+
+            </div>
+        </div>
+        <div class="four columns">
+            <br>
+        </div>
+
+    </div>
+</div>

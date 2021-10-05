@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  meeting_date: 2020-12-05
+  outdoors: false
+  minutes_duration: 1
+  description: MyText
+
+two:
+  user: two
+  meeting_date: 2020-12-05
+  outdoors: false
+  minutes_duration: 1
+  description: MyText

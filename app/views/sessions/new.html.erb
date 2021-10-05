@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row">
+        <div class="two columns">
+            <br>
+        </div>
+        <div class="eight columns" style="margin-bottom: 0; background-color: darkgray;" >
+            <div >
+                <form action="<%= session_url %>" style="margin-bottom: 0" method="post">
+                  <input
+                    type="hidden"
+                    name="authenticity_token"
+                    value="<%= form_authenticity_token %>">
+
+
+                    <label for="new-user-email"></label>
+                    <input id='new-user-email' type="text" name="user[email]" class="u-full-width" style="background-color:yellow; text-align: center; margin-bottom: 0;"
+                        placeholder="Enter Username">
+
+                    <label for="new-user-password"></label>
+                    <input id='new-user-password' type="password" name="user[password]" class="u-full-width" style="background-color:yellow; text-align: center;
+                                margin-bottom:0;" placeholder="Enter Password">
+
+                    <input class="u-full-width" type="submit" value="Login">
+
+
+                </form>
+            </div>
+
+        </div>
+        <div class="two columns">
+            <br>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="four columns">
+            <br>
+        </div>
+        <div class="four columns">
+            <div style="background-color:rgba(169, 169, 169, 0.671); text-align: center">
+                <br>
+                <a class='button' href=<%= new_user_url %> >Register a new user</a>
+
+
+
+                <a class="button" href="https://www.google.ie/search?ei=l33bX6rCLceG1fAP4oa7-AY&q=silly+me&oq=silly+me&gs_lcp=CgZwc3ktYWIQDDIMCAAQyQMQQxBGEPkBMgIIADICCC4yAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABDJAxCRAjoFCAAQkQI6BAgAEEM6CwguELEDEMcBEKMCOggIABCxAxCDAToOCC4QsQMQgwEQxwEQowI6BQgAELEDOggILhCxAxCDAToFCC4QsQM6CAguEMcBEK8BULlSWLddYK53aABwAngAgAFkiAH6BJIBAzcuMZgBAKABAaoBB2d3cy13aXrIAQjAAQE&sclient=psy-ab&ved=0ahUKEwjq6ZLJrtXtAhVHQxUIHWLDDm8Q4dUDCAw">Forgot Password</a>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+
+            </div>
+        </div>
+        <div class="four columns" style="text-align: left; margin-left: 0;">
+            <%= image_tag "File_000.jpeg", :class => "style_image" %>
+        </div>
+
+    </div>
+</div>
